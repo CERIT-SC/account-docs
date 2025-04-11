@@ -1,12 +1,8 @@
 {
   "title": "Access",
   "pages": [
-    "terms",
     "account",
-    "log-in",
     "perun",
-    "pbsmon",
-    "elixir",
-    "security"
+    "mfa",    
   ]
 }
