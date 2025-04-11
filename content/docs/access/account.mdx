@@ -1,35 +1,141 @@
 ---
-title: Account
+title: e-INFRA CZ Account Documentation
 ---
-## How to apply for the first time
+## Access Conditions
 
-- Follow the instruction at [registration form](https://metavo.metacentrum.cz/en/application/form).
-- You can check the state of your application [on Perun pages](https://metavo.metacentrum.cz/en/application/statecheck).
+Creating an e-INFRA CZ Account is open to all members of the academic community in the Czech Republic exclusively for research purposes.
 
-For general information see MetaVO pages concerning [application](https://metavo.metacentrum.cz/en/application/index.html) and [account management](https://metavo.metacentrum.cz/en/myaccount/index.html).
+[e-INFRA CZ Access Terms and Conditions](https://www.e-infra.cz/cs/file/8c17a18b8d2d21bade1fe2b4b0efe81c/525/20210408_Podminky_e-INFRA-CZ_EN.pdf)
 
-## Password change
+<Callout type="info" title="Service-specific access conditions">
+Aside from the general access conditions mentioned above, individual e-INFRA CZ sub-services may have additional specific conditions. Please check these at the service registration pages.
+</Callout>
 
-You can [change your password through this form](https://metavo.metacentrum.cz/en/myaccount/heslo.html).
+## How to Apply for the First Time
 
-## Account prolongation
+Your e-INFRA CZ Account is typically created automatically when you register for your first service provided by e-INFRA CZ operators. You can create your account in advance, but you'll still need to register for access to specific services.
 
-You can [prolong your account through this form](https://metavo.metacentrum.cz/en/myaccount/prodlouzeni).
+* [Registration to e-INFRA CZ](https://signup.e-infra.cz/anyfed/registrar/?vo=e-infra.cz) to access OwnCloud or webconference, for example.  
+* [Registration to MetaCenter](https://metavo.metacentrum.cz/cs/application/index.html) to access Grid, Cloud and Kubernetes services.
+* [Registration to IT4I](https://docs.it4i.cz/general/access/account-introduction/) to access Supercomputer.
+* [Registration to SensitiveCloud](https://www.cerit-sc.cz/infrastructure-services/sensitivecloud).
 
-{/*
 
-!!! todo
-    Following is to be done.
+During registration, **authentication via your home organization account** (e.g., university credentials) is required. Later, you can continue to access e-INFRA CZ services using these same credentials.
 
-## Expired account renewal
+Later, you can access your account and services in the same way.
 
-- co delat, kam napsat kdyz jim ucet vyprsel (treba uz pred nejakou dobou)
-- opet kam napsat/kliknout at netapou
+<Callout type="info" title="Access using additional accounts">
+You may add credentials from other organizations you're affiliated with, including social providers like Google, ORCID, or Czech MojeID, to access your e-INFRA CZ Account.
+</Callout>
 
-## Banned account renewal
+## Compliance With Access Conditions¶
 
-- co delat kdyz se jim zabanuje ucet (IP adresa)
-- kam napsat, co potrebujeme vedet
+Your affiliation with an academic organization (and thus your compliance with access conditions) is usually verified automatically during service registration or upon access. 
 
-*/}
+Periodic renewal of account compliance may be required.
+
+If compliance cannot be automatically verified due to the home organization's limitations in providing data, service operators may request additional steps individually.
+
+
+
+## Users' Duties
+
+According to the amendment of Act No. 130/2002 Coll., governing the reporting of R&D results achieved using large research infrastructures (LRIs), e-INFRA CZ users are required to comply with the following obligations:
+
+- Include mandatory acknowledgments in related publications.
+- Correctly attach e-INFRA CZ as a large research infrastructure source in R&D results.
+
+<Callout type="info">
+The acknowledgments and proper reporting procedures allow ongoing provision of advanced computing resources to the academic and research institutions in the Czech Republic.
+</Callout>
+
+### Mandatory Acknowledgment Text in Publications
+
+Your publications must include the following acknowledgment:
+Czech version
+```
+Tato práce byla podpořena Ministerstvem školství, mládeže a tělovýchovy
+České republiky prostřednictvím e-INFRA CZ (ID:90254).
+```
+English version
+```
+This work was supported by the Ministry of Education, Youth and Sports of
+the Czech Republic through the e-INFRA CZ (ID:90254).
+```
+
+### Attachment of e-INFRA CZ to R&D Results Generated Using This LRI
+When entering your R&D results related to e-INFRA CZ into your organization's system for export to RIV, please select "e-INFRA CZ research infrastructure" from the financial resource code list. 
+
+If unavailable, request your system administrator to add the following information:
+
+```
+LRI name: e-INFRA CZ
+Implementation period: January 1st 2023 - December 31st 2026
+LRI Number/code: 90254
+Type of LRI funding for RIV: J – Large Research Infrastructure
+Funding provider: MEYS
+Programme: LM – Large Research Infrastructure projects for R&D&I
+Principal Investigator: Ing. Jakub Papírník
+```
+
+## Login Process¶
+
+e-INFRA CZ offers two primary authentication methods for web-based services:
+
+ *   Log in with your home organization account
+ *   Log in with your e-INFRA CZ login and password
+
+### Log in with Home Organization Account
+
+Typical login steps are:
+
+1. Attempt to access the desired service.
+2. Prompted to log in.
+3. Select your home organization from the list of organizations.
+4. Redirected to your home organization's login form.
+5. Enter home organization's credentials (your home login and password).
+6. Upon successful login, you are redirected back to the initially requested service.
+
+<Callout type="info">
+Alternatively, You can choose the "e-INFRA CZ password" option from the list of organizations and log in via your login and password, if available.
+When logging in with e-INFRA CZ credentials, affiliation with your home organization can't be verified; as such, compliance cannot be confirmed. So, you'll need to use the home organization login method periodically to renew your account.
+</Callout>
+
+<Callout type="info" title="Limitation of available options">
+Each individual service may limit available identity providers (organizations, credential types). Some options may not always be available, depending on specific service rules.
+</Callout>
+
+
+<Callout type="info" title="Multi-Factor Authentication (MFA)"> 
+**Security tip:** Enhance your account security by activating MFA (Multi-Factor Authentication). This adds verification through a registered MFA token during the login process.
+
+TBD link
+</Callout>
+
+
+### Login with e-INFRA CZ Password
+
+- Certain services require an explicit e-INFRA CZ username and password.
+- The credentials are defined upon the first service requiring them and shared across required services.
+- These credentials can be managed via your [e-INFRA CZ User Profile](https://profile.e-infra.cz).
+
+
+### Non-Web Services¶
+
+Non-web services typically authenticate via login/password, Kerberos, or SSH keys. Refer to the respective service documentation for precise instructions.
+
+
+## e-INFRA CZ Login/Password Management
+
+By default, your e-INFRA CZ Account doesn't require new credentials; however, some services necessitate specific e-INFRA CZ username/password credentials. You will create these upon first using such a service. Once defined, these credentials are uniform across all services requiring them and managed at the [e-INFRA CZ User Profile](https://profile.e-infra.cz).
+
+
+## Personal Account and Password Changes
+
+Your account and access to services are managed by e-INFRA CZ AAI (Perun system), based on the AARC Blueprint Architecture. Account properties, settings, and passwords are conveniently managed through the [e-INFRA CZ User Profile](https://profile.e-infra.cz). Services may also have their own dedicated account settings based on their unique requirements.
+
+- Manage your account at: [e-INFRA CZ User Profile](https://profile.e-infra.cz)
+
+
 
