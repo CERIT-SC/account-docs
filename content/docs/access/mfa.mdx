@@ -1,106 +1,124 @@
 ---
 title: Multi-Factor Authentication (MFA)
 ---
-You can **enhance security of your e-INFRA CZ Account by enabling MFA** (Multi-Factor Authentication). In this case, an additional authentication method is required when you log in. **Some e-INFRA CZ services may require you to enable MFA in order to use them**.
+You can **enhance the security of your e-INFRA CZ Account by enabling Multi-Factor Authentication (MFA)**. MFA adds an additional verification step during login, making unauthorized access significantly harder. **Some services in the e-INFRA CZ infrastructure require MFA to be enabled.**
 
-e-INFRA CZ AAI (Authentication and Authorization Infrastructure) offers two ways to verify the second factor during the login process:
+The e-INFRA CZ AAI (Authentication and Authorization Infrastructure) supports two MFA methods:
 
- * TOTP (Time-based One-Time Passwords)
- * WebAuthn (Web Authentication)
+- **TOTP** (Time-based One-Time Password)
+- **WebAuthn** (Web Authentication)
+
 
 <Callout type="info" title="Recovery codes.">
-You are encouraged to also generate one-time recovery codes for regaining access in case you lose your primary tokens. Detailed instructions can be found here.
+To prevent being locked out of your account, we strongly recommend generating one-time **recovery codes** in case you lose access to your MFA tokens. See the [Recovery Codes section](#recovery-codes) for more information.
 </Callout>
 
-## Available Methods of MFA Verification
 
-The Interactive Guide to Help You Choose the Right MFA Type
+## Available MFA Methods
+
+Use our interactive guide to help you choose the right MFA method based on your device and preference.
+
+TBD interactive guide
 
 
 
+### TOTP (Time-based One-Time Password)
 
-### TOTP
+TOTP is a widely used standard where a mobile or desktop app generates 6-digit codes that change every 30 seconds. These codes are generated based on a shared secret between your device and our servers.
 
-TOTP (Time-based One-Time Password) is a standard method for one-time code generation used by many commercial services. TOTP app has a shared secret with the server and generates time-constrained numerical codes based on that secret. The most common setting is 6 digits with validity of 30 seconds.
+<Callout type="info" title="Also Known As">
+You might recognize TOTP under other names such as:
 
-<Callout type="info" title="More about TOTP"> 
+- Verification code
+- Authenticator code
+- 6-digit code from code generator or Google Authenticator
+- Code from authentication/verification app
+</Callout>
 
-You may know this method by many alternative names, including:
+#### Benefits
 
- * code from verification app,
- * verification code,
- * authentication code,
- * code from authentication app,
- * 6-digit code from code generator,
- * code from Google Authenticator or
- * verification code from the Google Authenticator app.
+- Works across multiple platforms (PC, mobile, tablet)
+- Compatible with many authenticator apps
+- Offline capable (no need for an internet connection)
 
-The advantage of this method is its versatility - you can copy the one-time code from the app in your smartphone to another app, type it on your PC or even a smart TV. The only requirement that the device you want to authenticate on needs to fulfill is the capability to enter digits.
+#### Supported Apps
 
-You can use any TOTP app, for example:
+Use any of the following TOTP-compatible apps:
 
 * [andOTP](https://sourceforge.net/projects/andotp.mirror/)
 * [Aegis Authenticator](https://play.google.com/store/apps/details?id=com.beemdevelopment.aegis)
 * [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)
 * [FreeOTP+](https://play.google.com/store/apps/details?id=org.liberty.android.freeotpplus)
 
-Alternatively you can use the TOTP capability of your password manager e.g.:
+Or use the TOTP functionality built into password managers:
 
 * [BitWarden](https://bitwarden.com/help/integrated-authenticator/)
 * [LastPass Authenticator](https://www.lastpass.com/solutions/authentication)
 
-If you already have a TOTP app installed, you don't have to install another one, you can just add e-INFRA CZ Account.
+> If you already use a TOTP app, simply add your e-INFRA CZ account. No need to install another.
 
-TOTP is defined [RFC 6238](https://datatracker.ietf.org/doc/html/rfc6238)
+TOTP is standardized in [RFC 6238](https://datatracker.ietf.org/doc/html/rfc6238)
+
+
+### WebAuthn (Web Authentication)
+
+WebAuthn is a modern, secure, and privacy-respecting authentication [standard](https://w3c.github.io/webauthn/) developed by W3C and FIDO. It is often integrated into modern operating systems and browsers.
+
+<Callout type="info" title="Also Known As">
+WebAuthn may also appear under other names like:
+
+- FIDO2
+- U2F (Universal 2nd Factor)
+- Security key
+- USB security key
 </Callout>
 
-### WebAuthn
+#### Benefits
 
-WebAuthn, short for Web Authentication API, is a modern [standard](https://w3c.github.io/webauthn/) created by W3C and FIDO. This method offers a high level of security while protecting your privacy, it is also easy to use. WebAuthn is often a part of the operating system, so you do not need to install anything on most devices.
+- No codes to type — just confirm with your device (button press, fingerprint, etc.)
+- Built into many devices and platforms
+- Extremely secure against phishing and account takeover
 
+#### Requirements
 
-<Callout type="info" title="More about WebAuthn"> 
+WebAuthn requires a supported browser and either:
 
-You may know this method by different names, including:
+- Built-in platform authentication (e.g. Windows Hello, macOS Touch ID)
+- A hardware token (e.g. [YubiKey](https://www.yubico.com/authentication-standards/fido2/))
 
-* FIDO2,
-* U2F,
-* Security key verification,
-* Universal second factor, or simply
-* Security key
+Learn more at [webauthn.io](https://webauthn.io) and [webauthn.me](https://webauthn.me/).
 
-The advantage of this method is its simplicity - you do not need to grab your smartphone, open an app and type in a code, you just confirm the authentication e.g. by pressing a button or using your thumb for fingerprint. You may register various devices and use a different method of authentication in each one depending on the device’s capabilities.
+#### Supported Platforms
+
+- **Windows 10+**: Use [Windows Hello](https://support.microsoft.com/en-us/windows/configure-windows-hello-dae28983-8242-bb2a-d3d1-87c9d265a5f0)
+- **macOS 10.15+**: Touch ID (limited to some browsers)
+- **Android 7+**: Requires screen lock (PIN, pattern, fingerprint, face)
+- **iOS 14.5+**: Touch ID / Face ID
+- **Linux**: Use USB-based FIDO2 tokens (e.g., YubiKey)
+
 
 In order to use WebAuthn, you need to use one of the supported web browsers together with the operating system capability, an app or a physical authenticator (e.g. a YubiKey).
 
-If you want to learn more, check out [webauthn.io](https://webauthn.io/) and [webauthn.me](https://webauthn.me/). Operating systems with WebAuthn built in:
 
-* Windows 10+ (Windows Hello)
-* macOS 10.15+ (only some browsers depending on version)
-* Android 7+ (a screen lock has to be set (fingerprint or face recognition)
-* iOS 14.5+ (Touch ID, Face ID)
-* For Linux, you can try Rust U2F or tpm-fido.
-</Callout>
-
-#### WebAuthn on MS Windows
+##### WebAuthn on MS Windows
 
 Use [Windows Hello](https://support.microsoft.com/en-us/windows/configure-windows-hello-dae28983-8242-bb2a-d3d1-87c9d265a5f0) using a PIN, facial recognition, or fingerprint. Windows 10 build 1903 or later is required.
 
-#### WebAuthn on Android¶
+##### WebAuthn on Android¶
 
 The [screen lock](https://support.google.com/android/answer/9079129?hl=en) functionality that uses a PIN, pattern, password, fingerprint or facial recognition can be used for MFA.
 
 Alternatively a NFC or USB connected hardware token like [Yubikey](https://www.yubico.com/authentication-standards/fido2/) can be used.
 
-#### WebAuth on MacOS
+##### WebAuth on MacOS
 
-The [Touch ID](https://support.apple.com/en-in/guide/mac-help/mchl16fbf90a/mac) feature can be used.
+The [Touch ID](https://support.apple.com/en-in/guide/mac-help/mchl16fbf90a/mac) feature can be used (Chrome, Safari). 
 
-#### WebAuthN on Linux PC With FIDO2-compatible Hardware Token¶
+##### WebAuthN on Linux PC With FIDO2-compatible Hardware Token¶
 
 USB hardware tokens that support [FIDO2](https://en.wikipedia.org/wiki/FIDO_Alliance#FIDO2), like [Yubikey](https://www.yubico.com/authentication-standards/fido2/), can be used.
 
-#### WebAuthN on Linux PC With Android Phone Used for Second Factor
+##### WebAuthN on Linux PC With Android Phone Used for Second Factor
 
 This use case requires a rather specific setup. The Linux PC must have Bluetooth enabled, Google Chrome browser must be used on the PC, and an Android phone with enabled Bluetooth and installed Chrome browser must be physically near the PC (so near that the PC and the phone can communicate over Bluetooth).
 
@@ -109,99 +127,117 @@ If the Chrome browser on the Android phone contains authenticated Google Account
 If the Chrome browser on the Android phone does not contain authenticated Google Account, scanning of a one-time QR code by the phone from the screen of the PC can be used.
 
 ## Set Up MFA
-Before you start using Multi-Factor Authentication, you need to register at least one authentication token. The first one has to be a TOTP app, then you can register any arbitrary number of TOTP apps or WebAuthn authenticators. You can read more about the both methods in MFA overview.
+Before using MFA, register at least one token. Your **first token must be TOTP**, after which you can register additional TOTP or WebAuthn tokens.
 
-<Callout type="warning">
-Once you add your first token you will need to perform MFA at login whenever you want to add/remove another tokens or otherwise change MFA related settings.
-</Callout> 
+<Callout type="info">
+Once you register your first token, MFA will be required whenever you log in to manage or modify your MFA settings.
+</Callout>
 
-### Add First Token
-1. Go to the token management page
-2. Either directly visit [https://mfa.login.e-infra.cz](https://mfa.login.e-infra.cz) or
-3. Visit [e-INFRA CZ User Profile](https://profile.e-infra.cz/profile), select `Settings` -> `Authentication` and click on `Manage my MFA tokens`
-4. Sign in with your `e-INFRA CZ Account`
-5. Enter the token management application (privacyIDEA) by clicking on `Log in`
+
+
+
+### Register Your First Token
+
+1. Visit the [MFA Management Page](https://mfa.login.e-infra.cz), or go to your [e-INFRA CZ User Profile](https://profile.e-infra.cz/profile), then navigate to `Settings` → `Authentication` and click `Manage my MFA tokens`.
+2. Sign in with your e-INFRA CZ credentials.
+3. Click **Log In** to enter the MFA management application (privacyIDEA).
 ![Login as](/img/account/add01.jpeg)
 
-6. Click on `Enroll Token` in the left menu
+4. Choose **Enroll Token** in the left menu
 ![List token](/img/account/add02.jpeg)
 
-
-7. If not selected, select TOTP and enter the description of your first token and confirm it by clicking Enroll Token
+5. Select **TOTP**, enter a description, and click **Enroll Token**.
 ![List token2](/img/account/add03.jpeg)
 
-8. You will see a QR code with a shared secret. Scan the QR code with your TOTP app.
+8. Scan the displayed QR code with your TOTP app.
+    - If using a mobile device, you can tap the link to open the TOTP app directly.
 
-If you are enrolling from the mobile phone that has installed a TOTP app, click on Here in the text next to the QR code. Shared secret will be transferred via link.
+> You can add more TOTP apps later — a new QR code will be generated.
 
-You do not have to back up the QR code or the link - you can register more TOTP apps later, using a different QR code.
 ![QR code](/img/account/add04.jpeg)
 
 <Callout type="info">
-Next time you sign in at [https://mfa.login.e-infra.cz](https://mfa.login.e-infra.cz) you will have to perform Multi-Factor Authentication with your first token.
+Next time you log in, MFA will be required using this token.
 </Callout>
 
 ### Add More Tokens
 
-1. Click on `Enroll Token` in the left menu. If you opened the page on a WebAuthn capable device, choose token type WebAuthn, enter a description (e.g. "Work laptop") and continue by clicking `Enroll token`.
-![Add  token](/img/account/add05.jpeg)
+1. Click **Enroll Token** again.
+2. Choose **WebAuthn** (if supported), enter a description, and click **Enroll Token**.
+![Add token](/img/account/add05.jpeg)
 
-2. A dialog window from the web browser or from the operating system pops up, asking for confirmation.
-
-Push the button on your physical authenticator, confirm by fingerprint when on smartphone or perform another required action depending on the device. In the picture you can see the variant for Ubuntu 22.04 (USB authenticator).
+3. Confirm registration using your device (e.g., fingerprint, hardware token).
 ![Add token2](/img/account/add06.jpeg)
 
-3. If the registration was successful, a confirmation about added token appears.
+3. After successful registration a confirmation appears.
 ![Add token3](/img/account/add07.jpeg)
-   
-4. You may add arbitrary number of TOTP apps and WebAuthn devices. **We highly recommend adding at least two devices and at least one of them with TOTP app**.
+
+> We **strongly recommend** registering at least two tokens, including one TOTP app, to prevent lockout.
+
 
 ### Recovery Codes
 
-To prevent losing access to your e-INFRA CZ Account in case you lose all registered devices, it is possible to generate one-time recovery codes, which you can securely store or print out.
+To regain access if you lose all tokens, generate and securely store **one-time recovery codes**.
 
-1. Click on `Enroll Token`
+1. Click **Enroll Token**
 ![Recovery](/img/account/recovery01.jpeg)
 
-2. As a type choose `PPR: One Time Passwords printed on sheet of paper`, enter description and click on `Enroll Token`
+2. Select `PPR: One Time Passwords printed on sheet of paper`, provide a description, and click **Enroll Token**.
 ![Recovery2](/img/account/recovery02.jpeg)
 
-3. See recovery codes by clicking on `The OTP Values` box. You can also print them out or download as PDF by clicking on `Print the OTP list`.
+3. View or print the codes by clicking `The OTP Values` or `Print the OTP list`.
 ![Recovery3](/img/account/recovery03.jpeg)
 
-### Enable/Disable MFA for All Services
 
-Multi-Factor Authentication is performed if it is **required by the service you are accessing** or if it is set to be **required for all services** in your account settings.
+### Enable or Disable MFA for All Services
 
-To enabled (force) MFA for all services go to your [e-INFRA CZ User Profil](https://profile.e-infra.cz/) and toggle `Turn on multi-factor authentication for all services` switch at `Settings` -> `Authentication` page. You can disable it again using the same switch.
-![Toggle](/img/account/toggle.jpeg)
+MFA is required:
+
+- If a **service mandates it**, or
+- If **you explicitly enable it** in your account settings
+
+To enable MFA globally:
+
+1. Go to your [e-INFRA CZ User Profile](https://profile.e-infra.cz/)
+2. Navigate to `Settings` → `Authentication`
+3. Toggle `Turn on multi-factor authentication for all services`
+![Toggle](/img/account/toggle.png)
+
 
 ## Perform MFA
 ### When Is MFA Required?
 
-MFA is required at login if the service you are accessing requires it. This is usually true for the services which works with sensitive data or when you want to manage your MFA settings.
+- When accessing services that require MFA
+- When you enable MFA for all services
+- When managing MFA settings or tokens
 
-You can also enable MFA for all services, which effectively means verifying it every time you log in with your e-INFRA CZ Account. This setting can be enabled in your [e-INFRA CZ User Profil](https://profile.e-infra.cz/).
 
-### Performing MFA Verification at Login
+### How MFA Works During Login
 
-The first steps of login process are the same. You select your home organization and log in with your home organization account, or you choose `e-INFRA CZ password` (if you have one) and log in using your username and password.
+1. Log in using your home organization or e-INFRA CZ credentials.
+2. If MFA is required, you’ll be prompted to verify using TOTP or WebAuthn.
 
-Then there is an additional step, in which you verify one of your registered MFA tokens. The prompt looks like on the following screenshot.
-TBD picture
+![MFA](/img/account/mfa.png)
 
 Both options `TOTP` and `WebAuthn` are displayed, and you must pick the one based on the type of MFA token you registered and have available at the moment. You can have both types of tokens registered, in such a case you can choose any of the options.
 
-You will be displayed an error message if you cannot fulfil MFA requirement - e.g. you don't have any registered tokens or verification fails.
-MFA From Your Home Organization Login¶
+> If you have no valid tokens or authentication fails, you will receive an error message.
 
-If you perform MFA during the login process within the context of your home organization account and information about it is released to us by the identity provider component, then you are not required to perform MFA again in the context of your e-INFRA CZ Account. This is currently supported only by the Masaryk University.
 
-You are still required to register at least one MFA token within your e-INFRA CZ Account. This is necessary to make sure, that you won't lose access to your e-INFRA CZ Account in case your affiliation to home organization is changed.
+### MFA with Home Organization Login
 
-Please note, that MFA tokens registered within your home organization account are not managed by us, and we can't offer you any support in case of you losing the access to your home organization account.
+If your **home institution** supports MFA and releases that information during login, you **don’t need to repeat MFA** within e-INFRA CZ.
 
-It is also not advised to register the same MFA tokens in your home organization account and e-INFRA CZ Account unless they are really your personal tokens. For example if the token is a physical USB token provided by your employer, then you might lose access to your e-INFRA CZ Account when your employment ends, and you return the USB token to the employer.
+Currently, this is supported only by **Masaryk University**.
+
+<Callout type="info" title="Important">
+You must still register at least one MFA token with your e-INFRA CZ Account to retain access if your affiliation changes.
+
+MFA tokens managed by your home organization are **not supported by us**, and we **cannot assist** if you lose access to them.
+
+Do **not** register shared or employer-owned MFA tokens (e.g., company-issued YubiKeys) unless you are certain they are your personal devices.
+</Callout>
+
 
 
 
