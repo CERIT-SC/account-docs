@@ -92,41 +92,17 @@ Learn more at [webauthn.io](https://webauthn.io) and [webauthn.me](https://webau
 
 #### Supported Platforms
 
-- **Windows 10+**: Use [Windows Hello](https://support.microsoft.com/en-us/windows/configure-windows-hello-dae28983-8242-bb2a-d3d1-87c9d265a5f0)
-- **macOS 10.15+**: Touch ID (limited to some browsers)
-- **Android 7+**: Requires screen lock (PIN, pattern, fingerprint, face)
+- **Windows 10+**: Use [Windows Hello](https://support.microsoft.com/en-us/windows/configure-windows-hello-dae28983-8242-bb2a-d3d1-87c9d265a5f0) using a PIN, facial recognition, or fingerprint. Windows 10 build 1903 or later is required.
+- **macOS 10.15+**: [Touch ID](https://support.apple.com/en-in/guide/mac-help/mchl16fbf90a/mac) feature can be used (Chrome, Safari). 
+- **Android 7+**: Requires [screen lock](https://support.google.com/android/answer/9079129?hl=en) (PIN, pattern, fingerprint, face)
 - **iOS 14.5+**: Touch ID / Face ID
-- **Linux**: Use USB-based FIDO2 tokens (e.g., YubiKey)
+- **Linux**: Use USB-based FIDO2 tokens (e.g., Yubikey](https://www.yubico.com/authentication-standards/fido2/)) Bluetooth enabled on both devices, Google Chrome browser on both, and the phone to be in close proximity to the PC. If your Android Chrome browser has an authenticated Google Account, screen lock methods can be used for the second factor; otherwise, you can scan a one-time QR code from the PC screen with your phone.
+- Alternatively a NFC or USB connected hardware token like [Yubikey](https://www.yubico.com/authentication-standards/fido2/) can be used.
 
-
+<Callout type="info">
 In order to use WebAuthn, you need to use one of the supported web browsers together with the operating system capability, an app or a physical authenticator (e.g. a YubiKey).
+</Callout>
 
-
-##### WebAuthn on MS Windows
-
-Use [Windows Hello](https://support.microsoft.com/en-us/windows/configure-windows-hello-dae28983-8242-bb2a-d3d1-87c9d265a5f0) using a PIN, facial recognition, or fingerprint. Windows 10 build 1903 or later is required.
-
-##### WebAuthn on Android¶
-
-The [screen lock](https://support.google.com/android/answer/9079129?hl=en) functionality that uses a PIN, pattern, password, fingerprint or facial recognition can be used for MFA.
-
-Alternatively a NFC or USB connected hardware token like [Yubikey](https://www.yubico.com/authentication-standards/fido2/) can be used.
-
-##### WebAuth on MacOS
-
-The [Touch ID](https://support.apple.com/en-in/guide/mac-help/mchl16fbf90a/mac) feature can be used (Chrome, Safari). 
-
-##### WebAuthN on Linux PC With FIDO2-compatible Hardware Token¶
-
-USB hardware tokens that support [FIDO2](https://en.wikipedia.org/wiki/FIDO_Alliance#FIDO2), like [Yubikey](https://www.yubico.com/authentication-standards/fido2/), can be used.
-
-##### WebAuthN on Linux PC With Android Phone Used for Second Factor
-
-This use case requires a rather specific setup. The Linux PC must have Bluetooth enabled, Google Chrome browser must be used on the PC, and an Android phone with enabled Bluetooth and installed Chrome browser must be physically near the PC (so near that the PC and the phone can communicate over Bluetooth).
-
-If the Chrome browser on the Android phone contains authenticated Google Account, the ways for unlocking screen lock will be used for second factor.
-
-If the Chrome browser on the Android phone does not contain authenticated Google Account, scanning of a one-time QR code by the phone from the screen of the PC can be used.
 
 ## Set Up MFA
 Before using MFA, register at least one token. Your **first token must be TOTP**, after which you can register additional TOTP or WebAuthn tokens.
@@ -134,8 +110,6 @@ Before using MFA, register at least one token. Your **first token must be TOTP**
 <Callout type="info">
 Once you register your first token, MFA will be required whenever you log in to manage or modify your MFA settings.
 </Callout>
-
-
 
 
 ### Register Your First Token
