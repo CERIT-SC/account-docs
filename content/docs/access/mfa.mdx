@@ -104,8 +104,8 @@ In order to use WebAuthn, you need to use one of the supported web browsers toge
 </Callout>
 
 
-## Set Up MFA
-Before using MFA, register at least one token. Your **first token must be TOTP**, after which you can register additional TOTP or WebAuthn tokens.
+## How to Start with MFA
+Register at least one token. Your **first token must be TOTP**.
 
 <Callout type="info">
 Once you register your first token, MFA will be required whenever you log in to manage or modify your MFA settings.
@@ -154,7 +154,7 @@ Next time you log in, MFA will be required using this token.
 We **strongly recommend** registering at least two tokens, including one TOTP app, to prevent lockout.
 </Callout>
 
-### Recovery Codes
+### Prepare Recovery Codes
 
 To regain access if you lose all tokens, generate and securely store **one-time recovery codes**.
 
@@ -168,7 +168,7 @@ To regain access if you lose all tokens, generate and securely store **one-time 
 ![Recovery3](/img/account/recovery03.jpeg)
 
 
-### Enable or Disable MFA for All Services
+### Enable or Disable MFA for (All) Services
 
 MFA is required:
 
@@ -191,14 +191,14 @@ To enable MFA globally:
 - When managing MFA settings or tokens
 
 
-### How MFA Works During Login
+### How to Log in Using MFA
 
 1. Log in using your home organization or e-INFRA CZ credentials.
 2. If MFA is required, you’ll be prompted to verify using TOTP or WebAuthn.
 
 ![MFA](/img/account/mfa.png)
 
-Both options `TOTP` and `WebAuthn` are displayed, and you must pick the one based on the type of MFA token you registered and have available at the moment. You can have both types of tokens registered, in such a case you can choose any of the options.
+Both options `TOTP` and `WebAuthn` are displayed, and you must pick the one based on the type of MFA token you registered and have available at the moment. You can have both types of tokens registered; in such a case, you can choose any of the options.
 
 
 <Callout type="tip">
