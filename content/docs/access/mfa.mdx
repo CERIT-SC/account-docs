@@ -18,7 +18,7 @@ Check our interactive guide to help you choose the right MFA method based on you
 <iframe src="https://www.figma.com/embed?embed_host=oembed&amp;url=https://www.figma.com/proto/aM6v3459PusLBOCFjYoqJi/Which-MFA-is-right-for-me?type=design&amp;node-id=894-919&amp;t=9mQFJjoDv6pQy4Tg-8&amp;scaling=scale-down-width&amp;page-id=894%3A918&amp;starting-point-node-id=894%3A919&amp;hide-ui=1" data-testid="embed-card-resolved-view-frame" data-iframe-loaded="true" allowfullscreen="" scrolling="yes" allow="autoplay; encrypted-media; clipboard-write" width="100%" height="600px"></iframe>
 
 
-### TOTP (Time-based One-Time Password)
+### Step 1 - TOTP (Time-based One-Time Password) Setting
 
 TOTP is a widely used standard where a mobile or desktop app generates 6-digit codes that change every 30 seconds. These codes are generated based on a shared secret between your device and our servers.
 
@@ -37,7 +37,7 @@ You might recognize TOTP under other names such as:
 
 #### Supported Apps
 
-Use any of the following TOTP-compatible apps:
+Choose any of the following TOTP-compatible apps:
 
 * [andOTP](https://sourceforge.net/projects/andotp.mirror/)
 * [Aegis Authenticator](https://play.google.com/store/apps/details?id=com.beemdevelopment.aegis)
@@ -56,42 +56,41 @@ If you already use a TOTP app, simply add your e-INFRA CZ account. No need to in
 TOTP is standardized in [RFC 6238](https://datatracker.ietf.org/doc/html/rfc6238)
 
 
-### WebAuthn (Web Authentication)
+### Step 2 - WebAuthn (Web Authentication) Setting
 
-WebAuthn is a modern, secure, and privacy-respecting authentication [standard](https://w3c.github.io/webauthn/) developed by W3C and FIDO. It is often integrated into modern operating systems and browsers.
+WebAuthn is often integrated into modern operating systems and browsers.
 
-<Callout type="info" title="Also Known As">
-WebAuthn may also appear under other names like:
-
-- FIDO2
-- U2F (Universal 2nd Factor)
-- Security key
-- USB security key
+<Callout type="info">
+In order to use WebAuthn, you need to use one of the supported web browsers together with the operating system capability, an app or a physical authenticator (e.g. a YubiKey).
 </Callout>
 
+- A hardware token (e.g. [YubiKey](https://www.yubico.com/authentication-standards/fido2/))
 - No codes to type — just confirm with your device (button press, fingerprint, etc.)
 - Built into many devices and platforms
 - Extremely secure against phishing and account takeover
 - Built-in platform authentication (e.g. Windows Hello, macOS Touch ID)
-- A hardware token (e.g. [YubiKey](https://www.yubico.com/authentication-standards/fido2/))
 
+<Callout type="info" title="Also Known As">
+WebAuthn may also appear under other names like:
+- FIDO2
+- U2F (Universal 2nd Factor)
+- Security key
+- USB security key
 Learn more at [webauthn.io](https://webauthn.io) and [webauthn.me](https://webauthn.me/).
+</Callout>
 
-#### How to set WebAuth in OS
 
+<Callout type="info" title="WebAuth Support in various OS">WebAuth Support in various OS
 - **Windows 10+**: Use [Windows Hello](https://support.microsoft.com/en-us/windows/configure-windows-hello-dae28983-8242-bb2a-d3d1-87c9d265a5f0) using a PIN, facial recognition, or fingerprint. Windows 10 build 1903 or later is required.
 - **macOS 10.15+**: [Touch ID](https://support.apple.com/en-in/guide/mac-help/mchl16fbf90a/mac) feature can be used (Chrome, Safari). 
 - **Android 7+**: Requires [screen lock](https://support.google.com/android/answer/9079129?hl=en) (PIN, pattern, fingerprint, face)
 - **iOS 14.5+**: Touch ID / Face ID
 - **Linux**: Use USB-based FIDO2 tokens (e.g., Yubikey](https://www.yubico.com/authentication-standards/fido2/)) Bluetooth enabled on both devices, Google Chrome browser on both, and the phone to be in close proximity to the PC. If your Android Chrome browser has an authenticated Google Account, screen lock methods can be used for the second factor; otherwise, you can scan a one-time QR code from the PC screen with your phone.
 - Alternatively a NFC or USB connected hardware token like [Yubikey](https://www.yubico.com/authentication-standards/fido2/) can be used.
-
-<Callout type="info">
-In order to use WebAuthn, you need to use one of the supported web browsers together with the operating system capability, an app or a physical authenticator (e.g. a YubiKey).
 </Callout>
 
 
-## How to Start with MFA
+## Step 3 - How to Set MFA in Perun
 Register at least one token. Your **first token must be TOTP**.
 
 <Callout type="info">
