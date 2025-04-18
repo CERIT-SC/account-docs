@@ -1,22 +1,18 @@
 ---
 title: Multi-Factor Authentication (MFA)
 ---
+
+## MFA Advantages
 You can **enhance the security of your e-INFRA CZ Account by enabling Multi-Factor Authentication (MFA)**. MFA adds an additional verification step during login, making unauthorized access significantly harder. **Some services in the e-INFRA CZ infrastructure require MFA to be enabled.**
 
 The e-INFRA CZ AAI (Authentication and Authorization Infrastructure) supports two MFA methods:
 
 - **TOTP** (Time-based One-Time Password)
-- **WebAuthn** (Web Authentication)
+- **WebAuthn** (Web Authentication, button press, fingerprint, etc.)
 
 
-<Callout type="info" title="Recovery codes.">
-To prevent being locked out of your account, we strongly recommend generating one-time **recovery codes** in case you lose access to your MFA tokens. See the [Recovery Codes section](#recovery-codes) for more information.
-</Callout>
 
-
-## Available MFA Methods
-
-Use our interactive guide to help you choose the right MFA method based on your device and preference.
+Check our interactive guide to help you choose the right MFA method based on your device and preference.
 
 
 <iframe src="https://www.figma.com/embed?embed_host=oembed&amp;url=https://www.figma.com/proto/aM6v3459PusLBOCFjYoqJi/Which-MFA-is-right-for-me?type=design&amp;node-id=894-919&amp;t=9mQFJjoDv6pQy4Tg-8&amp;scaling=scale-down-width&amp;page-id=894%3A918&amp;starting-point-node-id=894%3A919&amp;hide-ui=1" data-testid="embed-card-resolved-view-frame" data-iframe-loaded="true" allowfullscreen="" scrolling="yes" allow="autoplay; encrypted-media; clipboard-write" width="100%" height="600px"></iframe>
@@ -34,8 +30,6 @@ You might recognize TOTP under other names such as:
 - 6-digit code from code generator or Google Authenticator
 - Code from authentication/verification app
 </Callout>
-
-#### Benefits
 
 - Works across multiple platforms (PC, mobile, tablet)
 - Compatible with many authenticator apps
@@ -75,22 +69,15 @@ WebAuthn may also appear under other names like:
 - USB security key
 </Callout>
 
-#### Benefits
-
 - No codes to type — just confirm with your device (button press, fingerprint, etc.)
 - Built into many devices and platforms
 - Extremely secure against phishing and account takeover
-
-#### Requirements
-
-WebAuthn requires a supported browser and either:
-
 - Built-in platform authentication (e.g. Windows Hello, macOS Touch ID)
 - A hardware token (e.g. [YubiKey](https://www.yubico.com/authentication-standards/fido2/))
 
 Learn more at [webauthn.io](https://webauthn.io) and [webauthn.me](https://webauthn.me/).
 
-#### Supported Platforms
+#### How to set WebAuth in OS
 
 - **Windows 10+**: Use [Windows Hello](https://support.microsoft.com/en-us/windows/configure-windows-hello-dae28983-8242-bb2a-d3d1-87c9d265a5f0) using a PIN, facial recognition, or fingerprint. Windows 10 build 1903 or later is required.
 - **macOS 10.15+**: [Touch ID](https://support.apple.com/en-in/guide/mac-help/mchl16fbf90a/mac) feature can be used (Chrome, Safari). 
@@ -166,6 +153,10 @@ To regain access if you lose all tokens, generate and securely store **one-time 
 
 3. View or print the codes by clicking `The OTP Values` or `Print the OTP list`.
 ![Recovery3](/img/account/recovery03.jpeg)
+
+<Callout type="info" title="Recovery codes.">
+To prevent being locked out of your account, we strongly recommend generating one-time **recovery codes** in case you lose access to your MFA tokens. See the [Recovery Codes section](#recovery-codes) for more information.
+</Callout>
 
 
 ### Enable or Disable MFA for (All) Services
